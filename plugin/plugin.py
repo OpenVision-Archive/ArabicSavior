@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from Components.ConfigList import ConfigList, ConfigListScreen
-from Components.config import config, ConfigSubsection, ConfigEnableDisable, ConfigNumber, getConfigListEntry, configfile
+from Components.ConfigList import ConfigListScreen
+from Components.config import config, ConfigSubsection, ConfigEnableDisable, getConfigListEntry, configfile
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Plugins.Plugin import PluginDescriptor

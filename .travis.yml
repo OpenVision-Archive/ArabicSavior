@@ -21,7 +21,7 @@ git:
   depth: 1
 
 script:
-- echo compiling Weather2 plugin
+- echo compiling Arabic Savior plugin
 - python -m compileall .
 - find . -type f -name "*.po" -exec msgfmt {} -o {}.mo \;
 - echo done!
