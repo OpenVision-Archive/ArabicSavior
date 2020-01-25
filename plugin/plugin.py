@@ -10,6 +10,7 @@ from Components.Pixmap import Pixmap
 from enigma import getDesktop, addFont
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 currversion = '1.2'
 
@@ -26,21 +27,21 @@ skin_hd='''<screen
         size = "519,133"
         scrollbarMode = "showOnDemand"/>
     <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_red.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_red.png"
         position = "200,160"
         zPosition = "0"
         size = "93,27"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_green.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_green.png"
         position = "326,160"
         zPosition = "0"
         size = "93,27"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_yellow.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_yellow.png"
         position = "266,213"
         zPosition = "0"
         size = "93,27"
@@ -89,7 +90,7 @@ skin_hd='''<screen
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>
-</screen>
+</screen> % resolveFilename(SCOPE_PLUGINS)
 '''
 skin_fhd='''<screen
         position = "center,center"
@@ -100,14 +101,14 @@ position = "10,60"
 size = "780,200"
 scrollbarMode = "showOnDemand"/>
 <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_red.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_red.png"
         position = "300,240"
         zPosition = "0"
         size = "140,40"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_green.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_green.png"
         position = "490,240"
         zPosition = "0"
         size = "140,40"
@@ -115,7 +116,7 @@ scrollbarMode = "showOnDemand"/>
         alphatest = "on"/>
 
     <ePixmap
-        pixmap = "/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior/images/button_yellow.png"
+        pixmap = "%s/Extensions/ArabicSavior/images/button_yellow.png"
         position = "400,320"
         zPosition = "0"
         size = "140,40"
@@ -165,7 +166,7 @@ scrollbarMode = "showOnDemand"/>
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>   
-    </screen>'''
+    </screen>''' % resolveFilename(SCOPE_PLUGINS)
 
 class ArabicSaviorSetup(Screen, ConfigListScreen):
     sz_w = getDesktop(0).size().width()
@@ -187,7 +188,7 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
   
     def activate(self):
             try:
-                fontpath='/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior'
+                fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
                 print "arabic font added successfully"
             except:
@@ -201,7 +202,7 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
                 x[1].save()        
             configfile.save()
             try:
-                fontpath='/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior'
+                fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
                 print "arabic font added successfully"
             except:
@@ -222,7 +223,7 @@ def sessionstart(reason, **kwargs):
             pass
         else:
             try:
-                fontpath='/usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior'
+                fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
                 print "arabic font added successfully"
             except:
