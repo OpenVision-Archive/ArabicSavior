@@ -90,7 +90,7 @@ skin_hd='''<screen
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>
-</screen> % r(resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
+</screen> % ((resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
 '''
 skin_fhd='''<screen
         position = "center,center"
@@ -166,7 +166,7 @@ scrollbarMode = "showOnDemand"/>
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>   
-    </screen>''' % (resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
+    </screen>''' % ((resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
 
 class ArabicSaviorSetup(Screen, ConfigListScreen):
     sz_w = getDesktop(0).size().width()
