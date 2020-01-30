@@ -27,21 +27,21 @@ skin_hd='''<screen
         size = "519,133"
         scrollbarMode = "showOnDemand"/>
     <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_red.png"
+        pixmap = "~/images/button_red.png"
         position = "200,160"
         zPosition = "0"
         size = "93,27"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_green.png"
+        pixmap = "~/images/button_green.png"
         position = "326,160"
         zPosition = "0"
         size = "93,27"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_yellow.png"
+        pixmap = "~/images/button_yellow.png"
         position = "266,213"
         zPosition = "0"
         size = "93,27"
@@ -90,8 +90,8 @@ skin_hd='''<screen
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>
-</screen> % ((resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
-'''
+</screen>'''
+
 skin_fhd='''<screen
         position = "center,center"
         size = "800,400" title="  منقذ اللغه العربيه الاصدار الاول د محمود فرج   " >
@@ -101,14 +101,14 @@ position = "10,60"
 size = "780,200"
 scrollbarMode = "showOnDemand"/>
 <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_red.png"
+        pixmap = "~/images/button_red.png"
         position = "300,240"
         zPosition = "0"
         size = "140,40"
         transparent = "1"
         alphatest = "on"/>
     <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_green.png"
+        pixmap = "~/images/button_green.png"
         position = "490,240"
         zPosition = "0"
         size = "140,40"
@@ -116,7 +116,7 @@ scrollbarMode = "showOnDemand"/>
         alphatest = "on"/>
 
     <ePixmap
-        pixmap = "%s/Extensions/ArabicSavior/images/button_yellow.png"
+        pixmap = "~/images/button_yellow.png"
         position = "400,320"
         zPosition = "0"
         size = "140,40"
@@ -166,7 +166,7 @@ scrollbarMode = "showOnDemand"/>
         foregroundColor = "white"
         shadowColor = "black"
         shadowOffset = "-1,-1"/>   
-    </screen>''' % ((resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS), resolveFilename(SCOPE_PLUGINS))
+    </screen>'''
 
 class ArabicSaviorSetup(Screen, ConfigListScreen):
     sz_w = getDesktop(0).size().width()
@@ -176,6 +176,7 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
       skin=skin_fhd
     def __init__(self, session):
         Screen.__init__(self, session)
+        self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ArabicSavior")
         self.list = []
         self.list.append(getConfigListEntry(_('Arabic Savior:'), config.ArabicSavior.active))
         self['config'] = MenuList(self.list)
