@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, ConfigSubsection, ConfigEnableDisable, getConfigListEntry, configfile
@@ -191,9 +192,9 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
             try:
                 fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
-                print "arabic font added successfully"
+                print("arabic font added successfully")
             except:
-                print "arabic font not added"
+                print("arabic font not added")
             self['key_red'].setText(_('الغاء'))
             self['key_green'].setText(_('حفظ'))
             self.setTitle= "  منقذ اللغه العربيه الاصدار الاول د محمود فرج   "
@@ -205,9 +206,9 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
             try:
                 fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
-                print "arabic font added successfully"
+                print("arabic font added successfully")
             except:
-                print "arabic font not added"
+                print("arabic font not added")
             self.close()
 
     def keyClose(self):
@@ -226,9 +227,9 @@ def sessionstart(reason, **kwargs):
             try:
                 fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
                 addFont('%s/font_default.otf' % fontpath, 'ArabicFont', 100, 1)
-                print "arabic font added successfully"
+                print("arabic font added successfully")
             except:
-                print "arabic font not added"
+                print("arabic font not added")
 
 def Plugins(**kwargs):
     list = []
