@@ -170,12 +170,14 @@ scrollbarMode = "showOnDemand"/>
         shadowOffset = "-1,-1"/>   
     </screen>'''
 
+
 class ArabicSaviorSetup(Screen, ConfigListScreen):
     sz_w = getDesktop(0).size().width()
     if sz_w == 1280:
       skin = skin_hd
     else:
       skin = skin_fhd
+
     def __init__(self, session):
         Screen.__init__(self, session)
         self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ArabicSavior")
@@ -217,8 +219,10 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
             x[1].cancel()
         self.close()
 
+
 def main(session, **kwargs):
     session.open(ArabicSaviorSetup)
+
 
 def sessionstart(reason, **kwargs):
     if reason == 0:
@@ -231,6 +235,7 @@ def sessionstart(reason, **kwargs):
                 print("arabic font added successfully")
             except:
                 print("arabic font not added")
+
 
 def Plugins(**kwargs):
     list = []
