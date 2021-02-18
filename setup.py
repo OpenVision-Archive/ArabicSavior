@@ -4,7 +4,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.ArabicSavior'
-setup (name='enigma2-plugin-extensions-arabicsavior',
+setup(name='enigma2-plugin-extensions-arabicsavior',
        version='1.2',
        description='Plugin For Arabic langauge correction.',
        packages=[pkg],
