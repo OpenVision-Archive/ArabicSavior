@@ -187,10 +187,10 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
         self['key_red'] = StaticText(_('الغاء'))
         self['key_green'] = StaticText(_('حفظ'))
         self['key_yellow'] = StaticText(_('Activate Arabic'))
-        ConfigListScreen.__init__(self, self.list, session)        
+        ConfigListScreen.__init__(self, self.list, session)
         self['actions'] = ActionMap(['OkCancelActions', 'ColorActions'], {'cancel': self.keyClose,
          'green': self.keySave, 'yellow': self.activate}, -1)
-  
+
     def activate(self):
             try:
                 fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
@@ -201,10 +201,10 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
             self['key_red'].setText(_('الغاء'))
             self['key_green'].setText(_('حفظ'))
             self.setTitle = "  منقذ اللغه العربيه الاصدار الاول د محمود فرج   "
-        
+
     def keySave(self):
             for x in self['config'].list:
-                x[1].save()        
+                x[1].save()
             configfile.save()
             try:
                 fontpath = resolveFilename(SCOPE_PLUGINS, 'Extensions/ArabicSavior')
