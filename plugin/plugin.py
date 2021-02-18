@@ -19,7 +19,7 @@ currversion = '1.2'
 config.ArabicSavior = ConfigSubsection()
 config.ArabicSavior.active = ConfigEnableDisable(default=True)
 
-skin_hd='''<screen
+skin_hd = '''<screen
     position = "center,center"
     size = "533,266"
     title = "  منقذ اللغه العربيه الاصدار الاول د محمود فرج   ">
@@ -94,7 +94,7 @@ skin_hd='''<screen
         shadowOffset = "-1,-1"/>
 </screen>'''
 
-skin_fhd='''<screen
+skin_fhd = '''<screen
         position = "center,center"
         size = "800,400" title="  منقذ اللغه العربيه الاصدار الاول د محمود فرج   " >
 <widget
@@ -173,9 +173,9 @@ scrollbarMode = "showOnDemand"/>
 class ArabicSaviorSetup(Screen, ConfigListScreen):
     sz_w = getDesktop(0).size().width()
     if sz_w == 1280:
-      skin=skin_hd
+      skin = skin_hd
     else:
-      skin=skin_fhd
+      skin = skin_fhd
     def __init__(self, session):
         Screen.__init__(self, session)
         self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ArabicSavior")
@@ -198,7 +198,7 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
                 print("arabic font not added")
             self['key_red'].setText(_('الغاء'))
             self['key_green'].setText(_('حفظ'))
-            self.setTitle= "  منقذ اللغه العربيه الاصدار الاول د محمود فرج   "
+            self.setTitle = "  منقذ اللغه العربيه الاصدار الاول د محمود فرج   "
         
     def keySave(self):
             for x in self['config'].list:
