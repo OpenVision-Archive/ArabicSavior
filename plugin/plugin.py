@@ -187,7 +187,7 @@ class ArabicSaviorSetup(Screen, ConfigListScreen):
         self['key_yellow'] = StaticText(_('Activate Arabic'))
         ConfigListScreen.__init__(self, self.list, session)        
         self['actions'] = ActionMap(['OkCancelActions', 'ColorActions'], {'cancel': self.keyClose,
-         'green': self.keySave,'yellow': self.activate}, -1)
+         'green': self.keySave, 'yellow': self.activate}, -1)
   
     def activate(self):
             try:
