@@ -138,7 +138,7 @@ scrollbarMode = "showOnDemand"/>
         foregroundColor = "white"
         shadowColor = "black"
         text = "Activate Arabic"
-        shadowOffset = "-1,-1"/>        
+        shadowOffset = "-1,-1"/>
 <widget
         render = "Label"
         source = "key_red"
@@ -152,7 +152,7 @@ scrollbarMode = "showOnDemand"/>
         transparent = "1"
         foregroundColor = "white"
         shadowColor = "black"
-        
+
         shadowOffset = "-1,-1"/>
     <widget
         render = "Label"
@@ -167,7 +167,7 @@ scrollbarMode = "showOnDemand"/>
         transparent = "1"
         foregroundColor = "white"
         shadowColor = "black"
-        shadowOffset = "-1,-1"/>   
+        shadowOffset = "-1,-1"/>
     </screen>'''
 
 
