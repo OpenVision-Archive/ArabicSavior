@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, ConfigSubsection, ConfigEnableDisable, getConfigListEntry, configfile
